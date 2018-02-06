@@ -1,41 +1,37 @@
-// Place all the styles related to the Docs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.bitcoin {
-    text-align: center;
-    
-    a:link {
-        text-decoration: none;
-        color: black;
-    }
-    a:visited {
-        color:black;
-    }
-    a:hover {
-        color: blue;
-        text-decoration: underline;
-    }
+/*I love me some border-box*/
+* {
+    box-sizing: border-box;
+}
+/*This just stops me getting horizontal scrolling if anything overflows the width*/
+body {
+    overflow-x: hidden;
+}
+/*Just removing default browser padding/margin*/
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
 
-    .abstract {
-        display: inline-block;
-        text-align: left;
-        width:700px;
-    }
-
-    .section {
-        display: inline-block;
-        text-align: left;
-        width:800px;
-    }
-
-    .flexcontainer {
-       display: -webkit-flex;
-       display: flex;
-       -webkit-flex-direction: column;
-       flex-direction: column;
-       -webkit-align-items: center;
-       align-items: center;
-       -webkit-justify-content: center;
-       justify-content: center;
-    }
+/*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+.Container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    // position: relative;
+    width: 100%;
+    // backface-visibility: hidden;
+    // will-change: overflow;
+}
+/*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+*/
+.Left,
+.Right {
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+    width: 50%;
 }
