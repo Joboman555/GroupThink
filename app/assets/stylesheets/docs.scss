@@ -3,6 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .bitcoin {
     text-align: center;
+    
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
+    a:visited {
+        color:black;
+    }
+    a:hover {
+        color: blue;
+        text-decoration: underline;
+    }
 
     .abstract {
         display: inline-block;
