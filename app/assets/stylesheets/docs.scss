@@ -1,29 +1,29 @@
 // Place all the styles related to the Docs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
+.bitcoin {
     text-align: center;
-}
 
-.abstract {
-    display: inline-block;
-    text-align: left;
-    width:700px;
-}
+    .abstract {
+        display: inline-block;
+        text-align: left;
+        width:700px;
+    }
 
-.section {
-    display: inline-block;
-    text-align: left;
-    width:800px;
-}
+    .section {
+        display: inline-block;
+        text-align: left;
+        width:800px;
+    }
 
-.flexcontainer {
-   display: -webkit-flex;
-   display: flex;
-   -webkit-flex-direction: column;
-   flex-direction: column;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
+    .flexcontainer {
+       display: -webkit-flex;
+       display: flex;
+       -webkit-flex-direction: column;
+       flex-direction: column;
+       -webkit-align-items: center;
+       align-items: center;
+       -webkit-justify-content: center;
+       justify-content: center;
+    }
 }
