@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-    box-sizing: border-box;
-}
-
 html,
 body {
     padding: 0;
@@ -18,6 +14,7 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100%;
+    box-sizing: border-box;
 
     a:link {
         text-decoration: none;
@@ -32,13 +29,12 @@ body {
     }
 
     .abstract {
-        display: inline-block;
+        flex: 0 1 auto;
         text-align: left;
         width:700px;
     }
 
     .section {
-        display: inline-block;
         text-align: left;
         width:800px;
     }
@@ -63,6 +59,7 @@ body {
         -ms-overflow-style: none;
         overflow-y: scroll;
         width: 50%;
+        overflow-x: hidden;
     }
 
     .articlecontainer {
@@ -70,6 +67,7 @@ body {
        flex-direction: column;
        -webkit-align-items: center;
        align-items: center;
+       justify-content: space-between;
     }
 
     .questioncontainer {
