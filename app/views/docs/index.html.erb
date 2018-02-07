@@ -151,15 +151,24 @@
     </div>
     <div class="questioncontainer">
       <h2>Questions</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue pellentesque placerat. Praesent quis aliquet tortor, eget rutrum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur sit amet libero id dolor porta venenatis. Pellentesque in sapien viverra, scelerisque metus nec, sagittis mauris. Nunc nec ipsum varius, fermentum orci eget, scelerisque orci. Vivamus non ipsum gravida, vestibulum massa eget, iaculis tortor. Morbi posuere tincidunt dolor. Proin euismod suscipit quam sed molestie. Donec mollis sapien vitae pretium volutpat. Aliquam sed libero vehicula, fringilla nibh sit amet, mattis felis. Fusce maximus, nibh non maximus venenatis, enim sem ullamcorper eros, et aliquam diam sem quis ligula.
-
-Phasellus ornare, risus nec pharetra consequat, felis velit pulvinar nisi, a consequat metus felis eget augue. Nunc egestas vestibulum consectetur. Aliquam viverra, arcu et ullamcorper vulputate, lacus nibh mattis est, gravida lacinia neque lacus at odio. Duis vitae ligula at libero posuere tempor. Nullam luctus ante sed sapien volutpat, in consectetur dolor efficitur. Etiam accumsan libero in justo dictum laoreet. Aliquam nulla erat, aliquet ac ex et, suscipit interdum ante. Aliquam elementum imperdiet elit. Proin sagittis eros eu vulputate malesuada. Aliquam eu ullamcorper velit. Ut mollis diam velit, vitae blandit enim iaculis in.
-
-Sed maximus sem id aliquet blandit. Maecenas laoreet lacinia fermentum. Curabitur accumsan nisi id arcu molestie viverra. Donec suscipit neque ut tristique porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ut ultrices quam. Suspendisse tincidunt tempor erat, a blandit purus tincidunt ac. Donec a imperdiet nisl, ut blandit nisl.
-
-Sed ornare, nisi et posuere aliquam, nibh felis varius urna, id dapibus ex orci nec ipsum. Vestibulum lacinia neque in ex cursus, eu condimentum erat malesuada. Mauris scelerisque sagittis massa, quis dictum augue imperdiet eu. Nulla nisl lorem, rutrum in nisl nec, vehicula bibendum ex. Donec tristique magna vitae sem suscipit bibendum. Nulla vitae nunc non enim tincidunt ultrices ut eget augue. Fusce condimentum magna tellus, in porta tortor efficitur ac. Mauris pulvinar volutpat commodo. Donec auctor nulla eget mi suscipit, pulvinar dignissim felis sagittis. In condimentum vehicula lacus id condimentum. Sed vitae mi nisl. Quisque scelerisque convallis odio et luctus. Donec eu leo eget sem aliquam congue nec vel lorem. Maecenas nunc elit, rutrum in blandit egestas, imperdiet a diam. Sed ut lectus non dolor lobortis consectetur.
-
-Sed eu ullamcorper erat. Cras tempus dolor orci, id efficitur erat eleifend sit amet. Quisque sit amet orci nec lacus placerat imperdiet in non nunc. Vivamus vel auctor eros. Sed bibendum neque at imperdiet tincidunt. Vivamus augue dui, luctus a congue et, faucibus nec nisi. Phasellus efficitur felis quis massa tincidunt, eget bibendum orci sodales. Nullam nec purus orci. Phasellus sodales malesuada dui in blandit. In pharetra dolor sed elit eleifend, sed interdum ligula finibus.</p>
+      <ol id="questions">
+        <%= render @questions %>
+      </ol>
+      <%= form_for [@questions.new] do |f| %>
+        <fieldset>
+          <ul>
+            <li>
+              <%= f.text_area :title, rows: 1, cols: 60, placeholder: "Question Title..." %>
+            </li>
+            <li>
+              <%= f.text_area :text, rows: 2, cols: 60, placeholder: "Give as much context as possible..." %>
+            </li>
+            <li>
+              <%= f.submit 'Ask Question', class: 'button' %>
+            </li>
+          </ul>
+        </fieldset>
+      <% end %>
     </div>
   </div>
 </div>
