@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on "page:change", ->
-  alert "Clicked!"
-  # $('#question-link-1').click ->
-  #   alert "Clicked!"
+$(document).on "ready, turbolinks:load", ->
+  $('#question-link-1').click ->
+    $('.questioncontainer').toggle()
