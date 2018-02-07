@@ -154,7 +154,7 @@
       <ol id="questions">
         <%= render @questions %>
       </ol>
-      <%= form_for [@questions.new] do |f| %>
+      <%= form_for [@questions.new], remote:true do |f| %>
         <fieldset>
           <ul>
             <li>

@@ -18,7 +18,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     @question.save
-    redirect_to(@question)
+    respond_to do |format|
+      format.html { redirect_to @question}
+      format.js # render a questions/create.js.erb
+    end
   end
 
   private
