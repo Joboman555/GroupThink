@@ -4,4 +4,4 @@
 
 $(document).on "ready, turbolinks:load", ->
   $('#question-link-1').click ->
-    $('.questioncontainer').fadeToggle()
+    $('.questioncontainer').toggle()

@@ -47,6 +47,7 @@ body {
        height: 100vh;
        overflow: hidden;
        width: 100%;
+       justify-content: space-around;
     }
 
     .questioncontainer,
@@ -58,7 +59,7 @@ body {
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: none;
         overflow-y: scroll;
-        width: 50%;
+        width: 100%;
         overflow-x: hidden;
     }
 
