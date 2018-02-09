@@ -1,2 +1,3 @@
 $('#questions').html("<%= j render @questions %>");
-$('.questioncontainer').toggle()
+$('#questionsform').html("<%= j render 'new', link_id: @link_id %>");
+$('.questioncontainer').toggle();

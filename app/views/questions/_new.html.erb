@@ -1,0 +1,14 @@
+<%= form_for [@questions.new], remote:true do |f| %>
+  <div>
+    <div>
+      <%= f.text_area :title, rows: 1, cols: 60, placeholder: "Question Title..." %>
+    </div>
+    <div>
+      <%= f.text_area :text, rows: 2, cols: 60, placeholder: "Give as much context as possible..." %>
+    </div>
+    <%= f.hidden_field :link_id, value: link_id %>
+    <div>
+      <%= f.submit 'Ask Question', class: 'button' %>
+    </div>
+  </div>
+<% end %>

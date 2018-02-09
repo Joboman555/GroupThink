@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   def index
     if params[:link_id]
       @questions = Question.where(link_id: params[:link_id])
+      @link_id = params[:link_id]
     else
       @questions = Question.all
     end
