@@ -9,8 +9,6 @@ body {
 }
 
 .bitcoin {
-    text-align: center;
-    margin: 0;
     overflow: hidden;
     height: 100vh;
     width: 100%;
@@ -69,6 +67,7 @@ body {
        -webkit-align-items: center;
        align-items: center;
        justify-content: space-between;
+       text-align: center;
     }
 
     .questioncontainer {

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html
+      format.html # show all questions
       format.js # execute index.js.erb
     end
   end
