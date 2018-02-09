@@ -28,12 +28,12 @@ body {
 
     .abstract {
         flex: 0 1 auto;
-        text-align: left;
+        text-align: justify;
         width:700px;
     }
 
     .section {
-        text-align: left;
+        text-align: justify;
         width:800px;
     }
 
@@ -76,5 +76,18 @@ body {
         justify-content: flex-start;
         -webkit-justify-content: flex-start;
         display: none;
+    }
+
+    .questionswrapper {
+        padding-left: 1.5em;
+    }
+
+    #exit {
+        a:link {
+          font-family: Helvetica, sans-serif;
+          color: #a6a6a6;
+          text-decoration: none;  
+        }
+
     }
 }

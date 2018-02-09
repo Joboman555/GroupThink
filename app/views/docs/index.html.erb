@@ -150,9 +150,12 @@
       </div>
     </div>
     <div class="questioncontainer">
-      <div id="questions">
+      <div id="exit"><%= link_to("X", :controller => :questions, :action => :hide, remote:true) %></div>
+      <div class="questionswrapper">
+        <div id="questions">
+        </div>
+        <div id="questionsform"></div>
       </div>
-      <div id="questionsform"></div>
-    </div>
+      </div>
   </div>
 </div>

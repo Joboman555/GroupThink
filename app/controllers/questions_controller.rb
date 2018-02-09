@@ -30,6 +30,13 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def hide
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
     def question_params
       params.require(:question).permit(:title, :text, :link_id)
