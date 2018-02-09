@@ -5,6 +5,11 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
+
+    respond_to do |format|
+      format.html
+      format.js # execute index.js.erb
+    end
   end
 
   def show
