@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'docs/index'
   get 'questions/hide', :to => 'questions#hide'
 
+  resources :comments
   resources :questions
 
   root 'docs#index'

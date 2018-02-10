@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 html,
 body {
     padding: 0;
@@ -13,6 +23,7 @@ body {
     height: 100vh;
     width: 100%;
     box-sizing: border-box;
+    @include noselect;
 
     a:link {
         text-decoration: none;
@@ -78,16 +89,28 @@ body {
         display: none;
     }
 
-    .questionswrapper {
-        padding-left: 1.5em;
-    }
-
     #exit {
         a:link {
           font-family: Helvetica, sans-serif;
           color: #a6a6a6;
-          text-decoration: none;  
+          text-decoration: none;
         }
 
+    }
+
+    .question-item:hover {
+        background-color: #F2F1EF;
+        color: black;
+        text-decoration: none;
+        div:hover {
+            text-decoration: none;
+        }
+    }
+
+    .hidelink {
+       a:link {color: black;}      /* unvisited link */
+       a:visited {color: black;}   /* visited link */
+       a:hover {color: black; text-decoration: none;}     /* mouse over link */
+       a:active {color: black;}    /* selected link */
     }
 }

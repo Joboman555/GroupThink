@@ -1,7 +1,7 @@
-<div>
-  <p>
-    <div><h3><%= question.title %></h3></div>
-    <%= question.link_id %>
-    <%= question.text %>
-  <hr>
+<%= link_to question_path(id: question.id), remote:true do %>
+  <div class="question-item hidelink">
+    <p class= "hidelink">
+      <div><h3><%= question.title %></h3></div>
+    <hr>
 </div>
+<% end %>
