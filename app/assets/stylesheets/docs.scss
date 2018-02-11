@@ -108,9 +108,18 @@ body {
     }
 
     .hidelink {
-       a:link {color: black;}      /* unvisited link */
-       a:visited {color: black;}   /* visited link */
-       a:hover {color: black; text-decoration: none;}     /* mouse over link */
-       a:active {color: black;}    /* selected link */
+        a:link {color: black;}      /* unvisited link */
+        a:visited {color: black;}   /* visited link */
+        a:hover {color: black; text-decoration: none;}     /* mouse over link */
+        a:active {color: black;}    /* selected link */
+    }
+
+    // The link that is currently selected
+    .selected {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        pointer-events: none;
+        cursor: default;
     }
 }
