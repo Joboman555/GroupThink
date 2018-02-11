@@ -1,0 +1,37 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60px;
+    border-style: solid none;
+    border-width: 2px;
+    overflow: hidden;
+    background-color: #6b8ec7;
+}
+
+.icon {
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+}
+
+.messages {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
+    // border-top: solid;
+    overflow: hidden;
+    color: red;
+}
