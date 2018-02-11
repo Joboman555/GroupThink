@@ -9,7 +9,17 @@
   </head>
 
   <body>
-    <div class="header"><div class="icon">Group Think</div>
+    <div class="header">
+      <div class="main">
+        <div class="icon">Group Think</div>
+        <div class="login">
+          <% if user_signed_in? %>
+            <%= current_user.email %> <strong>|</strong> <%= link_to "logout", destroy_user_session_path %>
+          <% else %>
+            <%= link_to "login", new_user_session_path %>
+          <% end %>
+        </div>
+      </div>
       <div class="messages">
         <div class="notice"><%= notice %></div>
         <div class="alert"><%= alert %></div>

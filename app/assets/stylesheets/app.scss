@@ -13,25 +13,36 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 60px;
+    height: 50px;
     border-style: solid none;
     border-width: 2px;
     overflow: hidden;
     background-color: #6b8ec7;
-}
 
-.icon {
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-}
+    .main {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
 
-.messages {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    height: 100px;
-    width: 100%;
-    // border-top: solid;
-    overflow: hidden;
-    color: red;
+        .icon {
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            padding-left: 5px;
+        }
+
+        .login {
+            padding-right: 5px;
+        }
+    }
+
+    .messages {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        overflow: hidden;
+        color: red;
+        padding-left: 5px;
+    }
 }
