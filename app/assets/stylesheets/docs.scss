@@ -14,11 +14,9 @@
 
 .bitcoin {
     overflow: hidden;
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100%;
     position: relative;
-    margin-top: -50px;
-    padding-top: 50px;
     @include noselect;
 
     a:link {
