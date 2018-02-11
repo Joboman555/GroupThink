@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @comments = Comment.where(question_id: @question.id)
 
     respond_to do |format|
       format.html

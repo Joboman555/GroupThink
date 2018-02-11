@@ -1,6 +1,11 @@
 <div>
   <p>
     <div><h3><%= @question.title %></h3></div>
-    <hr>
     <%= @question.text %>
+    <hr>
+  </p>
+    <%= render new_comment_path, question_id: @question.id %>
+  <div id="direct-comments-container">
+    <%= render @comments %>
+  </div>
 </div>

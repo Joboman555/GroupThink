@@ -1,0 +1,11 @@
+<%= form_for [@comments.new], remote:true do |f| %>
+  <div>
+    <div>
+      <%= f.text_area :text, rows: 2, cols: 60, placeholder: "Comment Here..." %>
+    </div>
+    <%= f.hidden_field :question_id, value: question_id %>
+    <div>
+      <%= f.submit 'Submit', class: 'button' %>
+    </div>
+  </div>
+<% end %>
