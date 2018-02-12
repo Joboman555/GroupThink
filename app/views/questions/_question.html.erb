@@ -2,7 +2,7 @@
   <div class="question-item hidelink">
     <p class= "hidelink">
       <div id="title"><%= question.title %></div>
-      <div id="info"><%= "submitted on %s" % [question.created_at.strftime("%B #{question.created_at.day.ordinalize}, %Y")] %></div>
+      <%= render "info", submission: question %>
     <hr>
 </div>
 <% end %>

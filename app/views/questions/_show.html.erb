@@ -1,7 +1,7 @@
 <div>
   <p>
     <div id="title"><%= @question.title %></div>
-    <div id="info"><%= "submitted on %s" % [@question.created_at.strftime("%B #{@question.created_at.day.ordinalize}, %Y")] %></div>
+    <%= render "info", submission: @question %>
     <div id="text"><%= @question.text %></div>
     <hr>
   </p>

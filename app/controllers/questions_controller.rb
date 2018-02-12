@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: :create
   def index
     if params[:link_id]
       @questions = Question.where(link_id: params[:link_id])
@@ -43,8 +44,17 @@ class QuestionsController < ApplicationController
     end
   end
 
+  protected
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to new_user_session_path, :notice => 'You have to be logged in to ask a question. This helps us prevent spam. Sorry for the inconvenience!'
+      end
+    end
+
   private
     def question_params
-      params.require(:question).permit(:title, :text, :link_id)
+      params.require(:question).permit(:title, :text, :link_id).merge(user: current_user)
     end
 end
