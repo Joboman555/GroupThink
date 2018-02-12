@@ -96,12 +96,26 @@
             font-size: 0.9em;
             margin-top: 10px;
         }
+
+        .box {
+            border: 1px solid #888;
+            border-radius: 7px;
+            padding: 10px;
+        }
+
+        #comment {
+            padding-top: 5px;
+        }
+
+        #direct-comments-container {
+            padding-left: 10px;
+        }
     }
 
     #exit {
         a:link {
           font-family: Helvetica, sans-serif;
-          color: #a6a6a6;
+          color: #888;
           text-decoration: none;
         }
 

@@ -2,10 +2,10 @@
   <p>
     <div id="title"><%= @question.title %></div>
     <%= render "info", submission: @question %>
-    <div id="text"><%= @question.text %></div>
+    <div class="box" id="text"><%= @question.text %></div>
     <hr>
   </p>
-    <%= render new_comment_path, question_id: @question.id %>
+  <%= render new_comment_path, question_id: @question.id %>
   <div id="direct-comments-container">
     <%= render @comments %>
   </div>
