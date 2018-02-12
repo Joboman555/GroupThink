@@ -1,1 +1,4 @@
-<div><p><%= comment.text %></p></div>
+<div id="comment">
+  <div id="text"><%= comment.text %></div>
+  <div id="info"><%= "submitted on %s" % [comment.created_at.strftime("%B #{comment.created_at.day.ordinalize}, %Y")] %></div>
+</div>

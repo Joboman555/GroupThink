@@ -81,6 +81,21 @@
         justify-content: flex-start;
         -webkit-justify-content: flex-start;
         display: none;
+        font-family: Verdana, Geneva, sans-serif;
+
+        #title {
+            font-size: medium;
+        }
+
+        #info {
+            font-size: xx-small;
+            color: #888;
+        }
+
+        #text {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
     }
 
     #exit {
