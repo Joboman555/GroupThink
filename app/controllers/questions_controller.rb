@@ -38,15 +38,17 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    q = Question.find(params[:id])
+    @question = Question.find(params[:id])
     if params[:type] == 'upvote'
-      q.score = q.score + 1
+      @question.score = @question.score + 1
     elsif params[:type] == 'downvote'
-      q.score = q.score - 1
+      @question.score = @question.score - 1
     end
-    q.save!
+    @question.save!
+    puts 'got here ------------------'
 
     respond_to do |format|
+      format.html
       format.js
     end
   end
