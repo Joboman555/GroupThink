@@ -12,13 +12,7 @@
                                   supported by Chrome and Opera */
 }
 
-.votearrow {
-    width: 10px;
-    height: 10px;
-    border: 0px;
-    margin: 3px 2px 6px;
-    background: image-url('grayarrow.gif') no-repeat;
-}
+
 
 .bitcoin {
     overflow: hidden;
@@ -136,6 +130,37 @@
         text-decoration: none;
         div:hover {
             text-decoration: none;
+        }
+    }
+
+    .question-item {
+        .upvote-arrow {
+            width: 10px;
+            height: 10px;
+            border: 0px;
+            margin: 3px 6px 6px;
+            background: image-url('grayarrow.gif') no-repeat;
+        }
+
+        .downvote-arrow {
+            @extend .upvote-arrow;
+            transform: rotate(-180deg);
+        }
+
+        .question-row {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+        }
+
+        .arrows {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
         }
     }
 

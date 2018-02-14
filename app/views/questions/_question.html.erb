@@ -1,5 +1,11 @@
 <div class="question-item hidelink">
-  <div id="title"><%= link_to(question.title, question_path(id: question.id), remote:true) %></div>
+  <div class="question-row">
+    <div class="arrows">
+      <div class="upvote-arrow"></div>
+      <div class="downvote-arrow"></div>
+    </div>
+    <div id="title"><%= link_to(question.title, question_path(id: question.id), remote:true) %></div>
+  </div>
   <%= render "info", submission: question %>
   <hr>
 </div>
