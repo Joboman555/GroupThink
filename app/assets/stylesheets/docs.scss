@@ -88,6 +88,7 @@
 
         #title {
             font-size: medium;
+            margin-bottom: 3px;
         }
 
         #info {
@@ -138,7 +139,7 @@
             width: 10px;
             height: 10px;
             border: 0px;
-            margin: 3px 6px 6px;
+            margin: 3px 10px 6px 5px;
             background: image-url('grayarrow.gif') no-repeat;
         }
 
@@ -157,6 +158,13 @@
         }
 
         .arrows {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .listing {
             display: -webkit-flex;
             display: flex;
             -webkit-flex-direction: column;
