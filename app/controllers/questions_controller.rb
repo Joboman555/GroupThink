@@ -37,12 +37,28 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def update
+    q = Question.find(params[:id])
+    if params[:type] == 'upvote'
+      q.score = q.score + 1
+    elsif params[:type] == 'downvote'
+      q.score = q.score - 1
+    end
+    q.save!
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def hide
     respond_to do |format|
       format.html
       format.js
     end
   end
+
+
 
   protected
     def authenticate_user!
@@ -55,6 +71,6 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:title, :text, :link_id).merge(user: current_user)
+      params.require(:question).permit(:title, :text, :link_id, :type).merge(user: current_user)
     end
 end

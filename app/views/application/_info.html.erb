@@ -1,1 +1,1 @@
-<div id="info"><%= "%s by %s on %s" % [submission.score == 1 ? "1 point" : "$s points" % [submission.score], submission.user ? submission.user.username : "[deleted]", submission.created_at.strftime("%B #{submission.created_at.day.ordinalize}, %Y")] %></div>
+<div id="info"><%= "%s by %s on %s" % [submission.score == 1 ? "1 point" : "%s points" % [submission.score], submission.user ? submission.user.username : "[deleted]", submission.created_at.strftime("%B #{submission.created_at.day.ordinalize}, %Y")] %></div>
