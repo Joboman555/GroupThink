@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: 1
+  submission_type: MyString
+  user: one
+  submission_id: 1
+
+two:
+  score: 1
+  submission_type: MyString
+  user: two
+  submission_id: 1

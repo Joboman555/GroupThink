@@ -39,13 +39,26 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+    vote = Vote.where(submission_type: :question, user: current_user, submission_id: params[:id]).first
+
     if params[:type] == 'upvote'
-      @question.score = @question.score + 1
+      change = 1
     elsif params[:type] == 'downvote'
-      @question.score = @question.score - 1
+      change = -1
     end
+
+    puts '-------------------'
+    puts current_user
+    if !vote
+      vote = Vote.new(score: change, submission_type: :question, user: current_user, submission_id: params[:id])
+    else
+      # undo old vote
+      @question.score = @question.score - vote.score
+      vote.score = change
+    end
+    vote.save!
+    @question.score = @question.score + change
     @question.save!
-    puts 'got here ------------------'
 
     respond_to do |format|
       format.html
@@ -59,8 +72,6 @@ class QuestionsController < ApplicationController
       format.js
     end
   end
-
-
 
   protected
     def authenticate_user!
