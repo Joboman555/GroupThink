@@ -1,14 +1,16 @@
 <div class="question-item hidelink" id= <%="question-%s" % question.id %> >
   <div class="question-row">
     <div class="arrows">
-      <%= link_to question_path(id: question.id, type: :upvote), remote: true, method: :patch do %>
-        <div class="upvote-arrow"></div>
+      <%= link_to question_path(id: question.id, type: :upvote), remote: true, method: :patch, class: ("nosee" if votes.where(submission_id: question.id).first && votes.where(submission_id: question.id).first.score == 1) do %>
+        <div class="upvote-arrow">
+        </div>
       <% end %>
-      <%= link_to question_path(id: question.id, type: :downvote), remote: true, method: :patch do %>
+      <%= link_to question_path(id: question.id, type: :downvote), remote: true, method: :patch, class: ("nosee" if votes.where(submission_id: question.id).first && votes.where(submission_id: question.id).first.score == -1) do %>
         <div class="downvote-arrow"></div>
       <% end %>
     </div>
     <div class="listing">
+
       <div id="title"><%= link_to(question.title, question_path(id: question.id), remote:true) %></div>
       <%= render "info", submission: question %>
     </div>

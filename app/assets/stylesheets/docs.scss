@@ -12,7 +12,11 @@
                                   supported by Chrome and Opera */
 }
 
-
+.nosee {
+    visibility: hidden;
+    pointer-events: none;
+    cursor: default;
+}
 
 .bitcoin {
     overflow: hidden;

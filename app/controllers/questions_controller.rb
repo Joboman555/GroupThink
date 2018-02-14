@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
     if params[:link_id]
       @questions = Question.where(link_id: params[:link_id])
       @link_id = params[:link_id]
+      @votes = Vote.where(submission_type: :question, user: current_user).all
     else
       @questions = Question.all
     end
@@ -59,6 +60,8 @@ class QuestionsController < ApplicationController
     vote.save!
     @question.score = @question.score + change
     @question.save!
+
+    @votes = Vote.where(submission_type: :question, user: current_user).all
 
     respond_to do |format|
       format.html

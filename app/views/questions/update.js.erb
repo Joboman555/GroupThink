@@ -1,1 +1,1 @@
-$('#question-' + <%= @question.id %>).html("<%= j render @question %>");
+$('#question-' + <%= @question.id %>).html("<%= j render(@question, votes: @votes) %>");
