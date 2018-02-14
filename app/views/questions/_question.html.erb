@@ -1,8 +1,5 @@
-<%= link_to question_path(id: question.id), remote:true do %>
-  <div class="question-item hidelink">
-    <p class= "hidelink">
-      <div id="title"><%= question.title %></div>
-      <%= render "info", submission: question %>
-    <hr>
+<div class="question-item hidelink">
+  <div id="title"><%= link_to(question.title, question_path(id: question.id), remote:true) %></div>
+  <%= render "info", submission: question %>
+  <hr>
 </div>
-<% end %>
