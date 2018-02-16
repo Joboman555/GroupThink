@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :update]
   def index
     if params[:link_id]
       @questions = Question.where(link_id: params[:link_id])
@@ -78,7 +78,7 @@ class QuestionsController < ApplicationController
       if user_signed_in?
         super
       else
-        redirect_to new_user_session_path, :notice => 'You have to be logged in to ask a question. This helps us prevent spam. Sorry for the inconvenience!'
+        redirect_to new_user_session_path, :notice => 'You have to be logged in to do that. This helps us prevent spam. Sorry for the inconvenience!'
       end
     end
 
