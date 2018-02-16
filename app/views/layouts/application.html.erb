@@ -9,22 +9,21 @@
   </head>
 
   <body>
-    <div class="header">
-      <div class="main">
-        <div class="icon">Group Think</div>
-        <div class="login">
-          <% if user_signed_in? %>
-            <%= current_user.username %> <strong>|</strong> <%= link_to "logout", destroy_user_session_path, method: :delete%>
-          <% else %>
-            <%= link_to "login", new_user_session_path %>
-          <% end %>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <%= link_to "Group Think", root_path, class: "icon navbar-brand" %>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                  <li><a class="noselect"><%=current_user.username %></a></li>
+                  <li><%=link_to "logout", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to "login", new_user_session_path %></li>
+                <% end %>
+            </ul>
         </div>
-      </div>
-      <div class="messages">
-        <div class="notice"><%= notice %></div>
-        <div class="alert"><%= alert %></div>
-      </div>
-    </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
