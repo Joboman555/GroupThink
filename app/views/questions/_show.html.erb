@@ -1,7 +1,8 @@
 <div>
   <p>
-    <div id="title"><%= @question.title %></div>
-    <%= render "info", submission: @question %>
+    <div class="nofollow">
+      <%= render "questionheader", question: @question %>
+    </div>
     <div class="box" id="text"><%= @question.text %></div>
     <hr>
   </p>

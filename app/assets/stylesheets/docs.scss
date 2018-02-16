@@ -131,6 +131,48 @@
 
     .question-item:hover {
         background-color: #F2F1EF;
+    }
+
+    .nofollow {
+        #title {
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+
+    .up-arrow {
+        width: 20px;
+        height: 20px;
+        border: 0px;
+        margin: 3px 10px 6px 5px;
+    }
+    .grey {
+        background: image-url('arrow.png') no-repeat;
+    }
+
+    .down-arrow {
+        @extend .up-arrow;
+        transform: rotate(-180deg);
+    }
+
+    .orange {
+        background: image-url('orangearrow.png') no-repeat;
+    }
+
+    .blue {
+        background: image-url('bluearrow.png') no-repeat;
+    }
+
+    .question-row {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .question-row:hover {
         color: black;
         text-decoration: none;
         div:hover {
@@ -138,53 +180,18 @@
         }
     }
 
-    .question-item {
-        .up-arrow {
-            width: 20px;
-            height: 20px;
-            border: 0px;
-            margin: 3px 10px 6px 5px;
-        }
-        .grey {
-            background: image-url('arrow.png') no-repeat;
-        }
+    .arrows {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
 
-        .down-arrow {
-            @extend .up-arrow;
-            transform: rotate(-180deg);
-        }
-
-        .orange {
-            background: image-url('orangearrow.png') no-repeat;
-        }
-
-        .blue {
-            background: image-url('bluearrow.png') no-repeat;
-        }
-
-
-        .question-row {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-direction: row;
-            flex-direction: row;
-            width: 100%;
-            align-items: center;
-        }
-
-        .arrows {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            flex-direction: column;
-        }
-
-        .listing {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            flex-direction: column;
-        }
+    .listing {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
     }
 
     .hidelink {
