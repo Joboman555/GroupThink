@@ -139,18 +139,29 @@
     }
 
     .question-item {
-        .upvote-arrow {
-            width: 10px;
-            height: 10px;
+        .up-arrow {
+            width: 20px;
+            height: 20px;
             border: 0px;
             margin: 3px 10px 6px 5px;
-            background: image-url('grayarrow.gif') no-repeat;
+        }
+        .grey {
+            background: image-url('arrow.png') no-repeat;
         }
 
-        .downvote-arrow {
-            @extend .upvote-arrow;
+        .down-arrow {
+            @extend .up-arrow;
             transform: rotate(-180deg);
         }
+
+        .orange {
+            background: image-url('orangearrow.png') no-repeat;
+        }
+
+        .blue {
+            background: image-url('bluearrow.png') no-repeat;
+        }
+
 
         .question-row {
             display: -webkit-flex;

@@ -46,10 +46,10 @@ class QuestionsController < ApplicationController
       change = 1
     elsif params[:type] == 'downvote'
       change = -1
+    elsif params[:type] == 'unvote'
+      change = 0
     end
 
-    puts '-------------------'
-    puts current_user
     if !vote
       vote = Vote.new(score: change, submission_type: :question, user: current_user, submission_id: params[:id])
     else

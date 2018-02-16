@@ -1,0 +1,9 @@
+<% if votes.where(submission_id: question.id).first && votes.where(submission_id: question.id).first.score == -1 %>
+  <%= link_to question_path(id: question.id, type: :unvote), remote: true, method: :patch do %>
+    <div class="down-arrow blue"></div>
+  <% end %>
+<% else %>
+  <%= link_to question_path(id: question.id, type: :downvote), remote: true, method: :patch do %>
+    <div class="down-arrow grey"></div>
+  <% end %>
+<% end %>
