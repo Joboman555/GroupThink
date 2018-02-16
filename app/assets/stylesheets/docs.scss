@@ -12,13 +12,7 @@
                                   supported by Chrome and Opera */
 }
 
-.nosee {
-    visibility: hidden;
-    pointer-events: none;
-    cursor: default;
-}
-
-.bitcoin {
+#bitcoin {
     overflow: hidden;
     height: calc(100vh - 50px);
     width: 100%;
