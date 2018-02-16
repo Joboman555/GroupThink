@@ -1,4 +1,4 @@
-<% if votes.where(submission_id: question.id).first && votes.where(submission_id: question.id).first.score == 1 %>
+<% if question.vote_of(current_user) && question.vote_of(current_user).score == 1 %>
   <%= link_to question_path(id: question.id, type: :unvote), remote: true, method: :patch do %>
     <div class="up-arrow orange"></div>
   <% end %>

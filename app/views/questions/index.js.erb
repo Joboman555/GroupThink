@@ -1,5 +1,5 @@
 // Show right side panel
-$('#questions').html("<%= j render(@questions, votes: @votes) %>");
+$('#questions').html("<%= j render @questions %>");
 $('#questionsform').html("<%= j render 'new', link_id: @link_id %>");
 $('.questioncontainer').show();
 
