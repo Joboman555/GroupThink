@@ -108,14 +108,7 @@
         }
     }
 
-    #exit {
-        a:link {
-          font-family: Helvetica, sans-serif;
-          color: #888;
-          text-decoration: none;
-        }
 
-    }
 
     .question-item:hover {
         background-color: #F2F1EF;
@@ -195,4 +188,11 @@
         text-decoration: none;
         font-weight: bold;
     }
+}
+
+#exit {
+    color: #888;
+    padding-right: 15px;
+    float: right;
+    font-size: 1.5em;
 }

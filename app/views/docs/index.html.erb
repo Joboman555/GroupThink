@@ -150,7 +150,9 @@
       </div>
     </div>
     <div class="questioncontainer">
-      <div id="exit"><%= link_to("X", :controller => :questions, :action => :hide, remote:true) %></div>
+      <%= link_to controller: :questions, action: :hide, remote: true do %>
+        <div id="exit" class="glyphicon glyphicon-remove"></div>
+      <% end %>
       <div class="questionswrapper">
         <div id="questions">
         </div>
