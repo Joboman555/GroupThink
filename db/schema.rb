@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20180214090948) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "question_id"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "score", default: 1
     t.index ["question_id"], name: "index_question_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180214090948) do
     t.integer "link_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "score", default: 1
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
@@ -55,11 +58,14 @@ ActiveRecord::Schema.define(version: 20180214090948) do
   create_table "votes", force: :cascade do |t|
     t.integer "score"
     t.string "submission_type"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "submission_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "comments", "users"
+  add_foreign_key "questions", "users"
+  add_foreign_key "votes", "users"
 end
